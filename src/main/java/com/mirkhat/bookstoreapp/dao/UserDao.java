@@ -21,7 +21,7 @@ public class UserDao {
                 .getConnection("jdbc:mysql://localhost:3306/book_store?useSSL=false", "root", "root");
 
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
-             preparedStatement.setInt(1, 1);
+             preparedStatement.setInt(1, 2);
              preparedStatement.setString(2, user.getUsername());
              preparedStatement.setString(3, user.getPassword());
 
