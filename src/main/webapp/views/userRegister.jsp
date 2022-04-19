@@ -10,24 +10,35 @@
 <html>
 <head>
     <title>Title</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-    <div align="center">
-        <h1>User register</h1>
-        <form action="<%= request.getContextPath() %>/register" method="post">
-            <table style="width: 80%">
-                <tr>
-                    <td>Username</td>
-                    <td><input type="text" name="username"></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password"></td>
-                </tr>
-            </table>
+    <div class="container">
+        <div class="row">
+            <div>
+                <form action="<%= request.getContextPath() %>/register" method="POST">
+                    <div class="form-group">
+                        <h2>Registration</h2>
+                    </div>
 
-            <input type="submit" value="Submit">
-        </form>
+                    <div class="form-group">
+                        <laber>Username</laber>
+                        <input type="text" class="form-control" name="username" placeholder="username...">
+                    </div>
+
+                    <div class="form-group">
+                        <laber>Password</laber>
+                        <input type="password" class="form-control" name="password" placeholder="username...">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+            </div>
+        </div>
     </div>
+
+
 </body>
 </html>

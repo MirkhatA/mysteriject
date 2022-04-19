@@ -22,7 +22,7 @@ public class UserDao {
 
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
             // TODO: make autoincrement
-             preparedStatement.setInt(1, 2);
+             preparedStatement.setInt(1, 3);
              preparedStatement.setString(2, user.getUsername());
              preparedStatement.setString(3, user.getPassword());
 
