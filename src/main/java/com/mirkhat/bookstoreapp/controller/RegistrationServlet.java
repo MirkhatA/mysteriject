@@ -3,34 +3,29 @@ package com.mirkhat.bookstoreapp.controller;
 import com.mirkhat.bookstoreapp.dao.UserDao;
 import com.mirkhat.bookstoreapp.model.User;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet("/register")
-public class UserServlet extends HttpServlet {
+public class RegistrationServlet extends HttpServlet {
 
     private UserDao userDao = new UserDao();
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/userRegister.jsp");
-        dispatcher.forward(request, response);
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
-        String username = request.getParameter("username");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
 
         User user = new User();
-        user.setUsername(username);
+        user.setEmail(email);
         user.setPassword(password);
 
         try {
@@ -41,7 +36,7 @@ public class UserServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/userDetails.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/userLogin.jsp");
         dispatcher.forward(request, response);
     }
 }

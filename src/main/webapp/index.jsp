@@ -1,3 +1,9 @@
+<%
+    if (session.getAttribute("email") == null) {
+        response.sendRedirect("/views/userLogin.jsp");
+    }
+%>
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -5,6 +11,8 @@
         <title> Hello World</title>
     </head>
     <body>
-        <p>Home page "/"<</p>
+        <p>Home page "/"</p>
+
+        <a href="/views/userRegister.jsp">register</a>
     </body>
 </html>
