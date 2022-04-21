@@ -24,16 +24,22 @@
 
                     <div class="form-group">
                         <laber>Email</laber>
-                        <input type="text" class="form-control" name="email" placeholder="Your email...">
+                        <input type="email" class="form-control" name="email" placeholder="Your email..." required>
                     </div>
                     <!-- TODO: email validation-->
 
                     <div class="form-group">
                         <laber>Password</laber>
-                        <input type="password" class="form-control" name="password" placeholder="Your password...">
+                        <input type="password" class="form-control" name="password" placeholder="Your password..." required>
+                    </div>
+                    <!-- TODO: password confirm-->
+
+                    <div class="form-group">
+                        <laber>Password</laber>
+                        <input type="password" class="form-control" name="re-password" placeholder="Repeat your password..." required>
                     </div>
 
-                    <!-- TODO: password confirm-->
+                    <a href="userLogin.jsp">Already have an account</a><br>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
 
