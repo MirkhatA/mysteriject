@@ -23,14 +23,17 @@
                     </div>
 
                     <div class="form-group">
-                        <laber>Username</laber>
-                        <input type="text" class="form-control" name="username" placeholder="username...">
+                        <laber>Email</laber>
+                        <input type="text" class="form-control" name="email" placeholder="Your email...">
                     </div>
+                    <!-- TODO: email validation-->
 
                     <div class="form-group">
                         <laber>Password</laber>
-                        <input type="password" class="form-control" name="password" placeholder="username...">
+                        <input type="password" class="form-control" name="password" placeholder="Your password...">
                     </div>
+
+                    <!-- TODO: password confirm-->
 
                     <button type="submit" class="btn btn-primary">Submit</button>
 

@@ -25,11 +25,11 @@ public class RegistrationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
-        String username = request.getParameter("username");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
 
         User user = new User();
-        user.setUsername(username);
+        user.setEmail(email);
         user.setPassword(password);
 
         try {

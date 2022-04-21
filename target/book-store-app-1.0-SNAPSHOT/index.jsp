@@ -7,8 +7,6 @@
     <body>
         <p>Home page "/"</p>
 
-        Converted string <%= new String("Hello world").toUpperCase() %>
-
-        is 75 less 69 <%= 75 < 69 %>
+        <a href="/views/userRegister.jsp">register</a>
     </body>
 </html>

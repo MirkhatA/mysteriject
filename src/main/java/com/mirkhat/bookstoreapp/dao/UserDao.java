@@ -36,15 +36,17 @@ public class UserDao {
         loadDriver(dbDriver);
         Connection connection = getConnection();
 
-        String INSERT_USERS_SQL = "INSERT INTO users (`username`, `password`) VALUES (?, ?);";
+        String INSERT_USERS_SQL = "INSERT INTO users (`email`, `password`, `status`, `is_admin`) VALUES (?, ?, ?, ?);";
 
         int result = 0;
 
         PreparedStatement preparedStatement;
         try {
             preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
-            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(1, user.getEmail());
             preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setBoolean(3, true);
+            preparedStatement.setBoolean(4, false);
 
             System.out.println(preparedStatement);
 
