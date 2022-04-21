@@ -2,6 +2,8 @@ package com.mirkhat.bookstoreapp.dao;
 
 import com.mirkhat.bookstoreapp.model.User;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -51,6 +53,28 @@ public class UserDao {
             System.out.println(preparedStatement);
 
             result = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } connection.close();
+
+        return result;
+    }
+
+    public int loginUser(User user) throws ClassNotFoundException, SQLException{
+        loadDriver(dbDriver);
+        Connection connection = getConnection();
+
+        String SELECT_USER_SQL = "SELECT * FROM users WHERE email = ? AND password = ?;";
+
+        int result = 0;
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = connection.prepareStatement(SELECT_USER_SQL);
+            preparedStatement.setString(1, user.getEmail());
+            preparedStatement.setString(2, user.getPassword());
+
+            System.out.println(preparedStatement);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

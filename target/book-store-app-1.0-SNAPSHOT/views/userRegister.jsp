@@ -26,7 +26,6 @@
                         <laber>Email</laber>
                         <input type="email" class="form-control" name="email" placeholder="Your email..." required>
                     </div>
-                    <!-- TODO: email validation-->
 
                     <div class="form-group">
                         <laber>Password</laber>
