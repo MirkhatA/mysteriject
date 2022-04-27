@@ -7,12 +7,12 @@ public class User {
     private String lastName;
     private String phoneNo;
     private String address;
-    private boolean status;
-    private boolean isAdmin;
+    private int status;
+    private int isAdmin;
 
     public User() {}
 
-    public User(String email, String password, String firstName, String lastName, String phoneNo, String address, boolean status, boolean isAdmin) {
+    public User(String email, String password, String firstName, String lastName, String phoneNo, String address, int status, int isAdmin) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
@@ -71,19 +71,19 @@ public class User {
         this.address = address;
     }
 
-    public boolean isStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
-    public boolean isAdmin() {
+    public int getIsAdmin() {
         return isAdmin;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void setIsAdmin(int isAdmin) {
+        this.isAdmin = isAdmin;
     }
 }

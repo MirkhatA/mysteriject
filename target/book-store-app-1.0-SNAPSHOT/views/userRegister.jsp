@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div>
-                <form action="<%= request.getContextPath() %>/register" method="POST">
+                <form action="/insert" method="POST">
                     <div class="form-group">
                         <h2>Registration</h2>
                     </div>

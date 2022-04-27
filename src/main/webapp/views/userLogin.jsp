@@ -17,7 +17,7 @@
 <div class="container">
     <div class="row">
         <div>
-            <form action="<%= request.getContextPath() %>/login" method="POST">
+            <form action="/login" method="POST">
                 <div class="form-group">
                     <h2>Sign in</h2>
                 </div>
