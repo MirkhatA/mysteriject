@@ -2,6 +2,7 @@ package com.mirkhat.bookstoreapp.controller;
 
 import com.mirkhat.bookstoreapp.dao.UserDao;
 import com.mirkhat.bookstoreapp.model.User;
+import com.mysql.cj.Session;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -48,6 +49,8 @@ public class UserServlet extends HttpServlet {
                     e.printStackTrace();
                 }
                 break;
+            case "/logout":
+                logout(request, response);
             default:
                 showIndex(request, response);
                 break;
@@ -104,5 +107,12 @@ public class UserServlet extends HttpServlet {
         }
 
         response.sendRedirect("index.jsp");
+    }
+
+    private void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.invalidate();
+        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        dispatcher.forward(request, response);
     }
 }

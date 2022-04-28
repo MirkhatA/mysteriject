@@ -14,14 +14,14 @@
 <p>Home page "/"</p>
 
 <% if (session.getAttribute("email") == null) {%>
-    <a href="/views/userRegister.jsp">register</a>
-    <br>
-    <a href="/views/userLogin.jsp">login</a>
+<a href="/views/userRegister.jsp">register</a>
+<br>
+<a href="/views/userLogin.jsp">login</a>
 <% } else { %>
-    <b>
-        <%=session.getAttribute("email")%>
-    </b> <br>
-    <a href="#">logout</a>
+<b>
+    <%=session.getAttribute("email")%>
+</b> <br>
+<a href="./logout">logout</a>
 <% } %>
 </body>
 </html>
